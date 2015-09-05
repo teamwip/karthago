@@ -24,47 +24,47 @@ import de.bg.fhdw.bfwi413a.karthago.R;
 public class Gui {
 	
 	//DECLARE GUI-ELEMENTS
-	TextView question;
-	TextView leveltext;
-	Button confirm;
+	TextView mQuestion;
+	TextView mLevelText;
+	Button mConfirm;
 	
 	//CONSTRUCTOR
 	public Gui(Activity activity){
-		//ASSIGN LAYOUT TO ACTIVITY
+		//assign layout to activity
 		activity.setContentView(R.layout.activity_lm3_g);
-		//INITIALIZE GUI ELEMENTS
-		this.question = (TextView) activity.findViewById(R.id.textview_question_g);
-		this.leveltext = (TextView) activity.findViewById(R.id.textview_level_g);
-		this.confirm = (Button) activity.findViewById(R.id.btn_show_g);
+		//initialize gui elements
+		this.mQuestion = (TextView) activity.findViewById(R.id.textview_question_g);
+		this.mLevelText = (TextView) activity.findViewById(R.id.textview_level_g);
+		this.mConfirm = (Button) activity.findViewById(R.id.btn_show_g);
 	}
 	
 	//GETTERS AND SETTERS FOR GUI ELEMENTS
 
 	public TextView getQuestion() {
-		return question;
+		return mQuestion;
 	}
 
 	//The setter changes not the Object itself, but just the Text (Question text from XML) 
 	public void setQuestion(String text) {
-		question.setText(text);
+		mQuestion.setText(text);
 	}
 	
-	public TextView getLeveltext (){
-		return leveltext;
+	public TextView getLevelText (){
+		return mLevelText;
 	}
 	
 	//The setter changes not the Object itself, but just the Text (Question text from XML) 
-	public void setLeveltext (String text){
-		leveltext.setText(text);
+	public void setLevelText (String text){
+		mLevelText.setText(text);
 	}
 
 	public Button getConfirm() {
-		return confirm;
+		return mConfirm;
 	}
 
 	//The setter changes not the Object itself, but just the Text (Question text from XML) 
 	public void setConfirm(String text) {
-		confirm.setText(text);
+		mConfirm.setText(text);
 	}
 	
 }

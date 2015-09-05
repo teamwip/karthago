@@ -52,8 +52,8 @@ public class Init extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//INITIALIZE MVC-VARIABLES
-		initData(savedInstanceState);
+		//initialize mvc variables
+		initData();
 		initGui();
 		initApplicationLogic();
 		initEventToListenerMapping();
@@ -66,8 +66,8 @@ public class Init extends Activity{
 	}
 	
 	//METHOD FOR INITIALIZING DATA
-	private void initData(Bundle savedInstanceState) {
-		mData = new Data(this, savedInstanceState, Init.this);
+	private void initData() {
+		mData = new Data(this, Init.this);
 	}
 	
 	//METHOD FOR INITIALIZING GUI
@@ -87,10 +87,10 @@ public class Init extends Activity{
 	
 	//LISTENER FOR BACK BUTTON (KEYCODE_BACK)
 	public boolean onKeyDown(int keycode, KeyEvent event){
-		//CATCH BACK-BUTTON EVENT
+		//catch Back-Button event
 		  if(keycode==KeyEvent.KEYCODE_BACK){
-			//CALL MENU-ACTIVITY
-		   Navigation.startActivityMenu(mData.getmActivity());
+			//call menu activity
+		   Navigation.startActivityMenu(mData.getActivity());
 		  }
 		 return false;
 		 }
