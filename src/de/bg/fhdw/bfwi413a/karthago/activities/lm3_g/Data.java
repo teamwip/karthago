@@ -28,11 +28,6 @@ import de.bg.fhdw.bfwi413a.karthago.xml.XMLDomParserAndHandler;
 
 public class Data {
 	
-	//Not used, because obsolete
-	//private static final String KEY_LM3_ID = "M";
-	//private int mLM3Id;
-	//private final int DEFAULT_LM3_ID = 0;
-	
 	//DECLARE ACTIVITY VARIABLE
 			//This variable is necessary to get the current activity, for methods like finish() and getIntent()
 			//which are used in other classes of the activity
@@ -43,97 +38,72 @@ public class Data {
 			//variables for the helper classes like XMLDOMParserAndHandler, Results, SessionManagement and DatabaseHandler
 			//The informations are stored in String variables like questionID, UserAnswers a.s.o. which can be requested with getters
 	
-	XMLDomParserAndHandler xmlhandler;
-	Results result = new Results();
-	String questionText;
-	ArrayList<String> correctAnswers;
-	String questionID;
-	SessionManagement session;
-	private de.bg.fhdw.bfwi413a.karthago.activities.selection.ApplicationLogic ApplicationLogicSelection;
-	private DatabaseHandler dbhandler;
+	XMLDomParserAndHandler mXMLHandler;
+	Results mResult = new Results();
+	String mQuestionText;
+	ArrayList<String> mCorrectAnswers;
+	String mQuestionID;
+	SessionManagement mSession;
+	private de.bg.fhdw.bfwi413a.karthago.activities.selection.ApplicationLogic mApplicationLogicSelection;
+	private DatabaseHandler mDbHandler;
 	
 	//CONSTRUCTOR
-	public Data(Activity activity, Bundle savedInstanceState, Context context){
-		Intent intent;
+	public Data(Activity activity, Context context){
 		
+		//initialize mActivity
 		mActivity = activity;
-		if ( savedInstanceState == null ) {
-			intent = mActivity.getIntent();
-			//Not used, because obsolete
-			//mLM3Id = intent.getIntExtra(Navigation.KEY_LM3_ID, DEFAULT_LM3_ID);
-		}
-		else {
-			//Not used, because obsolete
-			//restoreDataFromBundle(savedInstanceState);
-		}
 		
-		//INITIALIZE HELPER CLASSES AND DATA
-		//gets current questionID
-		questionID = mActivity.getIntent().getExtras().getString("currentQuestionId");
+		//initialize helper classes and data
+		//get current questionID
+		mQuestionID = mActivity.getIntent().getExtras().getString("currentQuestionId");
 		//to get information from the xml file
-		xmlhandler = new XMLDomParserAndHandler(context);
-		correctAnswers = new ArrayList<String>();
-		//gets the questions and Answers for the specific questionID
-		result = xmlhandler.questionAndAnswersForFTAndGQuestions(questionID);
-		questionText = result.getQuestionForFT();
-		//saves correct answers in a String Array
-		correctAnswers = result.getCorrectAnswersForFT();
+		mXMLHandler = new XMLDomParserAndHandler(context);
+		mCorrectAnswers = new ArrayList<String>();
+		//get the questions and Answers for the specific questionID
+		mResult = mXMLHandler.questionAndAnswersForFTAndGQuestions(mQuestionID);
+		mQuestionText = mResult.getQuestionForFT();
+		//save correct answers in a String Array
+		mCorrectAnswers = mResult.getCorrectAnswersForFT();
 		//to get information from the database 
-		dbhandler = new DatabaseHandler(context);
+		mDbHandler = new DatabaseHandler(context);
 		//to call the next question with the help of the selection application logic and the method startSingleQuestion
-        ApplicationLogicSelection = new de.bg.fhdw.bfwi413a.karthago.activities.selection.ApplicationLogic();
+        mApplicationLogicSelection = new de.bg.fhdw.bfwi413a.karthago.activities.selection.ApplicationLogic();
         //get session for userDetails and cardfileId
-		session = new SessionManagement(context);
+		mSession = new SessionManagement(context);
 	}
 
 	//GETTERS
 	
-	public Activity getmActivity() {
+	public Activity getActivity() {
 		return mActivity;
 	}
 	
 	public Results getResult() {
-		return result;
+		return mResult;
 	}
 
 	public String getQuestionText() {
-		return questionText;
+		return mQuestionText;
 	}
 
 	public ArrayList<String> getCorrectAnswers() {
-		return correctAnswers;
+		return mCorrectAnswers;
 	}
 
 	public String getQuestionID() {
-		return questionID;
+		return mQuestionID;
 	}
 
-	public DatabaseHandler getDbhandler() {
-		return dbhandler;
+	public DatabaseHandler getDbHandler() {
+		return mDbHandler;
 	}
 	
 	public SessionManagement getSession() {
-		return session;
+		return mSession;
 	}
 	
 	public de.bg.fhdw.bfwi413a.karthago.activities.selection.ApplicationLogic getApplicationLogicSelection() {
-		return ApplicationLogicSelection;
+		return mApplicationLogicSelection;
 	}
-	
-	//Not used, because obsolete
-	
-//	public int getmMenuId() {
-//	return mLM3Id;
-//  }
-	
-	// save and restore data
-
-//	public void saveDataInBundle(Bundle bundle) {
-//		bundle.putInt(KEY_LM3_ID, mLM3Id);
-//	}
-//	
-//	public void restoreDataFromBundle(Bundle bundle) {
-//		mLM3Id = bundle.getInt(KEY_LM3_ID);
-//	}
 
 }

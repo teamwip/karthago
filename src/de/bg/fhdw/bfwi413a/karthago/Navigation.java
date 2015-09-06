@@ -30,36 +30,27 @@ public class Navigation {
 	
 	public static final Class<?> LOGIN_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.login.Init.class;
-	//public static final String KEY_LOGIN_ID = "de.bg.fhdw.bfwis413a.karthago.KEY_LOGIN_VALUE";
 	
 	public static final Class<?> CONFIG_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.config.Init.class;
-	//public static final String KEY_CONFIG_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_CONFIG_VALUE";
 	
 	public static final Class<?> SELECTION_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.selection.Init.class;
-	//public static final String KEY_SELECTION_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_SELECTION_VALUE";
 	
 	public static final Class<?> MENU_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.menu.Init.class;
-	//public static final String KEY_MENU_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_MENU_VALUE";
 	
 	public static final Class<?> STATISTICS_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.statistics.Init.class;
-	//public static final String KEY_STATISTICS_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_MENU_VALUE";
 	
 	public static final Class<?> LM1_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.lm1_mc.Init.class;
-	//public static final String KEY_LM1_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_LM1_VALUE";
 	
 	public static final Class<?> LM2_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.lm2_ft.Init.class;
-	//public static final String KEY_LM2_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_LM2_VALUE";
 	
 	public static final Class<?> LM3_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.lm3_g.Init.class;
-	//public static final String KEY_LM3_ID = "de.bg.fhdw.bfwi413a.karthago.KEY_LM3_VALUE";
-	
 	
 	/** METHOD FOR ACTIVITY CALL
 	 * 
@@ -76,7 +67,6 @@ public class Navigation {
 		
 		intent = new Intent();
 		intent.setClass(activity, classOfActivityToStart);
-		//intent.putExtra(key, par);
 		activity.startActivity(intent);
 		activity.finish();
 	}
