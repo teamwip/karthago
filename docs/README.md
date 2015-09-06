@@ -1,1 +1,2 @@
 - [Paketstruktur](./package-structure.md)
+- [Statistiken](./statistics.md)
