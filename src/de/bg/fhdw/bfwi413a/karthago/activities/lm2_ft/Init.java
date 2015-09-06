@@ -17,19 +17,6 @@
 
 package de.bg.fhdw.bfwi413a.karthago.activities.lm2_ft;
 
-/**********************************************************************************
- * ----------       INIT-CLASS (LM1)- WRITTEN BY: LEONIE SCHIBURR       -----------
- *********************************************************************************/
-
-/**
- * The Init Class initializes the activity. It initializes the Gui, the Data, the Application Logic and
- * the Event to Listener Mapping.
- * It also reacts if the back button of the device is pressed and navigates to the menu.
- * The onSaveInstanceState method is not used, because the implementation is obsolete.
- *
- * Methods and Variables are commented in the Code.
- *
- *  */
 
 //IMPORTS NECESSARY CLASSES AND PACKAGES
 import android.app.Activity;
