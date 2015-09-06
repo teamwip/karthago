@@ -64,7 +64,7 @@ public class ApplicationLogic {
 		
 		//BUILD ALERT DIALOG WITH ANSWER AND WRONG OR RIGHT BUTTONS
 		AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-		builder.setTitle("Lösung");
+		builder.setTitle("Das ist die Lösung. Hast du es gewusst?");
 		TextView corAns = new TextView(mContext);
 		for(int i = 0; i < mCorrectAnswers.size(); i++){
 			//SET CORRECT ANSWERS TO TEXTVIEW
@@ -73,7 +73,7 @@ public class ApplicationLogic {
 		corAns.setGravity(Gravity.CENTER_HORIZONTAL);
 		builder.setView(corAns);
 		//ADD BUTTONS
-		builder.setPositiveButton("Habs gewusst!", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton("Ich habs gewusst!", new DialogInterface.OnClickListener() {
 			//if user knew the answer, he should click "Habs gewusst!"
 	           public void onClick(DialogInterface dialog, int id) {
 	        	 //Saves boolean value --> if user answer is wrong = false, if right = true
@@ -93,7 +93,7 @@ public class ApplicationLogic {
 				mData.getApplicationLogicSelection().startSingleQuestion(mContext);
 	           }
 	       });
-		builder.setNegativeButton("Falsche Antwort!", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("Leider nicht...", new DialogInterface.OnClickListener() {
 			//if user didn't knew the answer, he should click "Falsche Antwort!"
 	           public void onClick(DialogInterface dialog, int id) {
 	        	 //Saves boolean value --> if user answer is wrong = false, if right = true

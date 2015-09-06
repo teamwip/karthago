@@ -18,7 +18,7 @@
         android:text="@string/start_config"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:background="@drawable/buttonshape_login" />
+        android:background="@drawable/buttonshape_standard" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -42,7 +42,7 @@
         android:text="@string/statistics"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:background="@drawable/buttonshape_login" />
+        android:background="@drawable/buttonshape_standard" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -63,7 +63,7 @@
         android:text="@string/start_selection"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:background="@drawable/buttonshape_login" />
+        android:background="@drawable/buttonshape_standard" />
 
     <TextView
         android:id="@+id/salutations1"

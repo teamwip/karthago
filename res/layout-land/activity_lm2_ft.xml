@@ -55,7 +55,7 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_below="@+id/edittext_ft"
 	        android:layout_marginTop="40dp"
-	        android:background="@drawable/buttonshape_login"
+	        android:background="@drawable/buttonshape_standard"
 	        android:textColor="#FFFFFF"
 	        android:textSize="24sp"
             android:text="Bestätigen" />
