@@ -17,14 +17,10 @@ package de.bg.fhdw.bfwi413a.karthago.activities.lm2_ft;
 
 //IMPORTS FOR NECESSARY CLASSES AND PACKAGES
 
-import java.util.Date;
-
 import android.app.Activity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import de.bg.fhdw.bfwi413a.karthago.R;
 
 public class Gui {

@@ -3,7 +3,6 @@ package de.bg.fhdw.bfwi413a.karthago.activities.statistics;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import de.bg.fhdw.bfwi413a.karthago.Navigation;
 
 public class Data {
 	

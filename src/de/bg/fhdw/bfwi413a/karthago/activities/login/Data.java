@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import de.bg.fhdw.bfwi413a.karthago.Navigation;
 import de.bg.fhdw.bfwi413a.karthago.R;
 import de.bg.fhdw.bfwi413a.karthago.db.DatabaseHandler;
 

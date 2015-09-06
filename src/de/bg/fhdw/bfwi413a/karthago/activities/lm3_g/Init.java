@@ -39,7 +39,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import de.bg.fhdw.bfwi413a.karthago.Navigation;
-import de.bg.fhdw.bfwi413a.karthago.R;
 
 public class Init extends Activity{
 	

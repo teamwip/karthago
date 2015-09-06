@@ -1,6 +1,5 @@
 package de.bg.fhdw.bfwi413a.karthago.activities.menu;
 
-import de.bg.fhdw.bfwi413a.karthago.Navigation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
