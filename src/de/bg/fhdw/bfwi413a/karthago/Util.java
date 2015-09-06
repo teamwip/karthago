@@ -19,4 +19,12 @@ public class Util {
 		}
 		return result;
 	}
+
+	public static int getOrDefault(Map<String, Integer> map, String key, int def) {
+		Integer result = map.get(key);
+		if (result == null) {
+			result = def;
+		}
+		return result;
+	}
 }

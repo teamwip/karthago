@@ -48,12 +48,12 @@ public class Init extends Activity {
 		SessionManagement session = new SessionManagement(getApplicationContext());
 		DatabaseHandler db_handler = new DatabaseHandler(getApplicationContext());
 		String current_user = session.getUserDetails();
-		ArrayList<String> answer_types = db_handler.getEventsByAnswer(current_user);
-		Map<String, Integer> answers = Util.frequencies(answer_types);
+		ArrayList<String> answers = db_handler.getEventsByAnswer(current_user);
 		mGui.setTextviewCountQuestAnswered(Integer.toString(answers.size()));
 
-		int right_answers = answers.get("correct") != null ? answers.get("correct") : 0;
-		int wrong_answers = answers.get("incorrect") != null ? answers.get("incorrect") : 0;
+		Map<String, Integer> answer_types = Util.frequencies(answers);
+		int right_answers = Util.getOrDefault(answer_types, "correct", 0);
+		int wrong_answers = Util.getOrDefault(answer_types, "incorrect", 0);
 		mGui.setTextviewCountQuestRight(Integer.toString(right_answers));
 		mGui.setTextviewCountQuestWrong(Integer.toString(wrong_answers));
 	}
