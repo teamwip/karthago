@@ -20,8 +20,6 @@ android:bottom="0dp"
 android:width="100dp"
 android:height="26dp"
 /> -->
-<stroke
-android:width="0dp"
-android:color="#1E5163"
+
 />
 </shape>

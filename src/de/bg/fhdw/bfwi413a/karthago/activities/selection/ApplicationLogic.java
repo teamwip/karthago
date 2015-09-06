@@ -22,21 +22,21 @@ public class ApplicationLogic {
 	private Gui mGui;
 	private Data mData;
 	
-	private DatabaseHandler dbhandler;
-	private long tstamp;
-	private SessionManagement session;
-	private String requiredID;
+	private DatabaseHandler mDbHandler;
+	private long mTstamp;
+	private SessionManagement mSession;
+	private String mRequiredID;
 	private Context mContext;
-	private String answer_type;
+	private String mAnswerType;
 	
 	//CONSTRUCTOR TO GENERATE A APPLICATIONLOGIC OBJECT
 	public ApplicationLogic(Gui gui, Data data, Context context) {
 		//INITIALIZE COMPONENTS
 		mGui = gui;
 		mData = data;
-		dbhandler = new DatabaseHandler(context);
-		session = new SessionManagement(context);
-		requiredID = new String();
+		mDbHandler = new DatabaseHandler(context);
+		mSession = new SessionManagement(context);
+		mRequiredID = new String();
 		mContext = context;
 		
 	}
@@ -56,7 +56,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id1);
+			mSession.writeCardfileID(cardfile_id1);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -68,7 +68,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id2);
+			mSession.writeCardfileID(cardfile_id2);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -80,7 +80,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id3);
+			mSession.writeCardfileID(cardfile_id3);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -92,7 +92,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id4);
+			mSession.writeCardfileID(cardfile_id4);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -104,7 +104,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id5);
+			mSession.writeCardfileID(cardfile_id5);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -116,7 +116,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id6);
+			mSession.writeCardfileID(cardfile_id6);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -128,7 +128,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id7);
+			mSession.writeCardfileID(cardfile_id7);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -140,7 +140,7 @@ public class ApplicationLogic {
 			//WRITE THE CARDFILENAME IN THE SESSION; IMPORTANT FOR METHOD STARTSINGLEQUESTION
 				//writes ID of the chosen cardfile into the session
 				//startSingleQuestion prompts the cardfile (now the chosen cardfile)
-			session.writeCardfileID(cardfile_id8);
+			mSession.writeCardfileID(cardfile_id8);
 			
 			//START THE QUESTION
 			startSingleQuestion(mContext);
@@ -152,15 +152,15 @@ public class ApplicationLogic {
 		//this question has to be called after every learn mode activity to start a new question or finish the learn mode
 	public void startSingleQuestion(Context context){
 		//DECLARE AND INITIALIZE NEEDED VARIABLES
-		tstamp = new Date().getTime();
-		session = new SessionManagement(context);
-		dbhandler = new DatabaseHandler(context);
-		String cardfile_id = session.getCardfileID();
+		mTstamp = new Date().getTime();
+		mSession = new SessionManagement(context);
+		mDbHandler = new DatabaseHandler(context);
+		String cardfile_id = mSession.getCardfileID();
 		//GET THE ID FOR THE FIRST/NEXT QUESTION
 			//if there is no question left or there aren't any questions, the method getRequiredQuestionIDs will return an empty string
-		requiredID = dbhandler.getRequiredQuestionIDs(tstamp, cardfile_id, session.getUserDetails().toString());
+		mRequiredID = mDbHandler.getRequiredQuestionIDs(mTstamp, cardfile_id, mSession.getUserDetails().toString());
 		//CHECK IF ANY QUESTION HAS TO BE ANSWERED
-		if(requiredID.equals("")){
+		if(mRequiredID.equals("")){
 		//IF NO QUESTION HAS TO BE ANSWERED THE USER IS PROVIDED WITH A MESSAGE (TOAST)
 		Toast toast = Toast.makeText(context, "Es müssen keine weiteren Fragen der Kartei " + cardfile_id + " bearbeitet werden oder die Kartei ist nicht verfügbar!", Toast.LENGTH_LONG);
 		toast.show();
@@ -171,33 +171,33 @@ public class ApplicationLogic {
 		}else{
 			//IF A QUESTION HAST TO BE ANSWERED
 			//GET ANSWERTYPE OF QUESTION
-			answer_type = dbhandler.getAnswerTypeForCertainQuestionID(requiredID);
+			mAnswerType = mDbHandler.getAnswerTypeForCertainQuestionID(mRequiredID);
 			//CALLS LEARN MODE ACTIVITY BELONGING TO THE PROMPTED ANSWERTYPE
-			if(answer_type.equals("MC")){
+			if(mAnswerType.equals("MC")){
 				//CREATE INTENT
 				Intent nextScreen = new Intent(context, de.bg.fhdw.bfwi413a.karthago.activities.lm1_mc.Init.class);
 				//SET FLAG BECAUSE CLASS IS NO ACTIVITY (APPLICATIONLOGIC)
 				nextScreen.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				//PUT DATA TO INTENT
-				nextScreen.putExtra("currentQuestionId", requiredID);
+				nextScreen.putExtra("currentQuestionId", mRequiredID);
 				context.startActivity(nextScreen);
 			}
-			else if(answer_type.equals("FT")){
+			else if(mAnswerType.equals("FT")){
 				//CREATE INTENT
 				Intent nextScreen = new Intent(context, de.bg.fhdw.bfwi413a.karthago.activities.lm2_ft.Init.class);
 				//SET FLAG BECAUSE CLASS IS NO ACTIVITY (APPLICATIONLOGIC)
 				nextScreen.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				//PUT DATA TO INTENT
-				nextScreen.putExtra("currentQuestionId", requiredID);
+				nextScreen.putExtra("currentQuestionId", mRequiredID);
 				context.startActivity(nextScreen);
 			}
-			else if(answer_type.equals("G")){
+			else if(mAnswerType.equals("G")){
 				//CREATE INTENT
 				Intent nextScreen = new Intent(context, de.bg.fhdw.bfwi413a.karthago.activities.lm3_g.Init.class);
 				//SET FLAG BECAUSE CLASS IS NO ACTIVITY (APPLICATIONLOGIC)
 				nextScreen.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				//PUT DATA TO INTENT
-				nextScreen.putExtra("currentQuestionId", requiredID);
+				nextScreen.putExtra("currentQuestionId", mRequiredID);
 				context.startActivity(nextScreen);
 			}	
 		}
