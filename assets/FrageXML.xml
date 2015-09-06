@@ -19,7 +19,7 @@
     <Answers>
       <Answer1>Mount St.Helens</Answer1>
       <Answer2>K2</Answer2>
-      <Answer3>Matternhorn</Answer3>
+      <Answer3>Matterhorn</Answer3>
       <Answer4 correct="true">Mount Everest</Answer4>
     </Answers>
   </Question>
@@ -306,7 +306,7 @@
   </Question>
   <Question>
     <QuestionId>29</QuestionId>
-    <QuestionText>Welchen Begriff prägte der Architekt Asplund für einen Baustil des 20. Jahrhunderts, der sich durch die Verwendung von Sichtbeton, Stahl und Glas auszeichnet?</QuestionText>
+    <QuestionText>Welchen Begriff prägte der Architekt Asplund für einen Baustil des 20. Jh., der sich durch die Verwendung von Sichtbeton, Stahl und Glas auszeichnet?</QuestionText>
     <AnswerType>MC</AnswerType>
     <Answers>
       <Answer1>Funktionalismus</Answer1>

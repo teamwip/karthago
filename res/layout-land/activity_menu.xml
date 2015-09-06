@@ -69,7 +69,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/salutations1"
             android:layout_marginTop="45dp"
-            android:background="@drawable/buttonshape_login"
+            android:background="@drawable/buttonshape_standard"
             android:text="@string/start_selection"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
@@ -81,7 +81,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/btn_start_config"
             android:layout_marginTop="30dp"
-            android:background="@drawable/buttonshape_login"
+            android:background="@drawable/buttonshape_standard"
             android:text="@string/statistics"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
@@ -93,7 +93,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/btn_start_selection"
             android:layout_marginTop="30dp"
-            android:background="@drawable/buttonshape_login"
+            android:background="@drawable/buttonshape_standard"
             android:text="@string/start_config"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />

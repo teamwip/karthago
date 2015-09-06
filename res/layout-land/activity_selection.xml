@@ -23,7 +23,7 @@
                 android:id="@+id/btn_cardfile1"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile1"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -34,7 +34,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/btn_cardfile1"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile2"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -45,7 +45,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/btn_cardfile2"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile3"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -56,7 +56,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_cardfile3"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile4"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -72,7 +72,7 @@
                 android:id="@+id/btn_cardfile5"
                 android:layout_width="250dp"
                 android:layout_height="50dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile5"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -83,7 +83,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_cardfile5"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile6"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -94,7 +94,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_cardfile6"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile7"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -105,7 +105,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/btn_cardfile7"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/buttonshape_login"
+                android:background="@drawable/buttonshape_standard"
                 android:text="@string/cardfile8"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
