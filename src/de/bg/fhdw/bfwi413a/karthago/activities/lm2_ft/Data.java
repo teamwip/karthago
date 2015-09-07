@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import de.bg.fhdw.bfwi413a.karthago.SessionManagement;
 import de.bg.fhdw.bfwi413a.karthago.db.DatabaseHandler;
@@ -28,11 +27,6 @@ import de.bg.fhdw.bfwi413a.karthago.xml.XMLDomParserAndHandler;
 
 
 public class Data {
-	
-	//Not used, because obsolete
-//	private static final String KEY_LM2_ID = "M";
-//	private int mLM2Id;
-//	private final int DEFAULT_LM2_ID = 0;
 	
 	//DECLARE ACTIVITY VARIABLE
 	//This variable is necessary to get the current activity, for methods like finish() and getIntent()
@@ -51,20 +45,8 @@ public class Data {
 	
 	//CONSTRUCTOR
 	public Data(Activity activity, Bundle savedInstanceState, Context context){
-		Intent intent;
-		
-		mActivity = activity;
-		if ( savedInstanceState == null ) {
-			intent = mActivity.getIntent();
-			//Not used, because obsolete
-			//mLM2Id = intent.getIntExtra(Navigation.KEY_LM2_ID, DEFAULT_LM2_ID);
-		}
-		else {
-			//Not used, because obsolete
-			//restoreDataFromBundle(savedInstanceState);
-		}
-		
 		//INITIALIZE HELPER CLASSES AND DATA
+		mActivity = activity;
 		//gets current questionID
 		questionID = mActivity.getIntent().getExtras().getString("currentQuestionId");
 		//to get information from the xml file
@@ -121,19 +103,4 @@ public class Data {
 	public SessionManagement getSession() {
 		return session;
 	}
-	
-//	public int getmMenuId() {
-//		return mLM2Id;
-//	}
-	
-	// save and restore data
-
-//	public void saveDataInBundle(Bundle bundle) {
-//		bundle.putInt(KEY_LM2_ID, mLM2Id);
-//	}
-//	
-//	public void restoreDataFromBundle(Bundle bundle) {
-//		mLM2Id = bundle.getInt(KEY_LM2_ID);
-//	}
-	
 }
