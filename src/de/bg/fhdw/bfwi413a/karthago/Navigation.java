@@ -32,7 +32,7 @@ public class Navigation {
 			de.bg.fhdw.bfwi413a.karthago.activities.login.Init.class;
 	
 	public static final Class<?> CONFIG_ACTIVITY_CLASS =
-			de.bg.fhdw.bfwi413a.karthago.config.Init.class;
+			de.bg.fhdw.bfwi413a.karthago.activities.config.Init.class;
 	
 	public static final Class<?> SELECTION_ACTIVITY_CLASS =
 			de.bg.fhdw.bfwi413a.karthago.activities.selection.Init.class;

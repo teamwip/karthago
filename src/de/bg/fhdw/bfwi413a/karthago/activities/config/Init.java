@@ -12,7 +12,7 @@
  * 
  *********************************************************************************/
 
-package de.bg.fhdw.bfwi413a.karthago.config;
+package de.bg.fhdw.bfwi413a.karthago.activities.config;
 
 import android.app.Activity;
 import android.os.Bundle;
