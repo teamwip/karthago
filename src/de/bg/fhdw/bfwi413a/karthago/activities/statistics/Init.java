@@ -1,4 +1,11 @@
-//Vasilij
+/***************************************************************************************
+ * ----------     STATISTICS-ACTIVITY - WRITTEN BY: VASILIJ SCHNEIDERMANN     ----------
+ *
+ * Diese Activity zeigt allgemeine Statistiken für den Lernenden an,
+ * unterteilt in statische und dynamische Informationen.
+ *
+ ***************************************************************************************/
+
 package de.bg.fhdw.bfwi413a.karthago.activities.statistics;
 
 import java.util.ArrayList;
