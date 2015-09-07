@@ -30,6 +30,7 @@ XML-Schnittstelle.
 Präfix: `de.bg.fhdw.bfwi413a.karthago`
 
 - `activities`
+  - `config`
   - `lm1_mc`
   - `lm2_ft`
   - `lm3_g`
@@ -37,9 +38,6 @@ Präfix: `de.bg.fhdw.bfwi413a.karthago`
   - `menu`
   - `selection`
   - `statistics`
-- `config`
 - `db`
 - `onboarding`
 - `xml`
-
-TODO: `onboarding` und `config` sollten eigene Activities sein.
