@@ -89,9 +89,9 @@ public class Init extends Activity{
 	
 	//LISTENER FOR BACK BUTTON
 	public boolean onKeyDown(int keycode, KeyEvent event){
-		//ABFANGEN DES "ZURÜCK-TASTE" EVENTS
+		//CALL THE "BACK-BUTTON" EVENT
 		  if(keycode==KeyEvent.KEYCODE_BACK){
-			  //RUFE MENÜ-ACTIVITY AUF
+			  //CALL MENU-ACTIVITY
 		   Navigation.startActivityMenu(mData.getmActivity());
 		  }
 		 return false;
